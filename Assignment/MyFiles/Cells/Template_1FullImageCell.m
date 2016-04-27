@@ -21,12 +21,12 @@
 
 -(void)setupSubviews {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSString *imgURL = self.subModel.imgUrl;
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgURL]];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.imgView.image =  [UIImage imageWithData:data];
+            NSString *imgURL = self.subModel.imgUrl;
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgURL]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.imgView.image =  [UIImage imageWithData:data];
+            });
         });
-    });
 }
 
 - (void)awakeFromNib {

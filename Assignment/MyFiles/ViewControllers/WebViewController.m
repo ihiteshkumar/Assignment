@@ -8,7 +8,7 @@
 
 #import "WebViewController.h"
 
-@interface WebViewController()<UIWebViewDelegate>
+@interface WebViewController()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
@@ -17,11 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = self.titleString;// @"webView";
-    // Do any additional setup after loading the view from its nib.
-//    NSURL *websiteUrl = [NSURL URLWithString:@"http://www.google.com"];
-    
-        NSURL *websiteUrl = [NSURL URLWithString:self.urlString];
+    self.title = self.titleString;
+
+    NSURL *websiteUrl = [NSURL URLWithString:self.urlString];
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:websiteUrl];
     [self.webView loadRequest:urlRequest];
 }

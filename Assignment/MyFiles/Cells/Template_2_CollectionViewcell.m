@@ -24,12 +24,9 @@
 }
 -(void)setupSubVIew {
     self.ProductName.text = self.subModel.labelTxt;
-    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
         NSString *imgURL = self.subModel.imgUrl;
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgURL]];
-        //set your image on main thread.
         dispatch_async(dispatch_get_main_queue(), ^{
             self.productImage.image =  [UIImage imageWithData:data];
         });
