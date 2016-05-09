@@ -36,10 +36,10 @@
 }
 -(void)loadJson {
     
-        NSString* filePath = [[NSBundle mainBundle] pathForResource:@"f_two" ofType:@"json"];
-        NSString *jsonString = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error: NULL];
-        NSData *data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-        NSArray *responseArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"f_two" ofType:@"json"];
+    NSString *jsonString = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error: NULL];
+    NSData *data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray *responseArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
     [self response:responseArray];
 }

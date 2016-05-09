@@ -60,7 +60,7 @@
         view = container;
     }
     HomePageSubModel *subModel = self.banners[index];
-    
+    myImage.image = nil;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *imgURL = subModel.imgUrl;
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgURL]];
